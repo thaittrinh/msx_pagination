@@ -16,9 +16,9 @@ export class StudentsService {
          * sort() : default desc.
          */
     async getStudents(studentReq: StudentReq){ 
-        if(studentReq.page < 1) studentReq.page = 1;
+        if(!studentReq.page || studentReq.page < 1) studentReq.page = 1;
         
-        if(!studentReq.code) studentReq.code = '';// request ko có "code"
+        if(!studentReq.code) studentReq.code = '';
         if(!studentReq.name) studentReq.name = '';
 
         //if(!studentReq.minAge) studentReq.minAge = 0; 
